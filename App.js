@@ -3,7 +3,11 @@ import { SafeAreaView, StyleSheet, Text, View } from "react-native";
 import ChatListItem from "./src/components/ChatListItem";
 import ChatList from "./src/screens/ChatList";
 import ChatScreen from "./src/screens/ChatScreen";
-import Navigation from "./src/components/Navigation";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import ProfileScreen from "./src/screens/ProfileScreen";
+import HomeScreen from "./src/screens/HomeScreen";
+import BottomTabs from "./src/components/BottomTabs";
 
 const chat = {
   id: "1",
@@ -20,12 +24,18 @@ const chat = {
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      {/* <ChatList /> */}
-      <Navigation />
-      {/* <ChatScreen /> */}
-      <StatusBar style="auto" />
-    </View>
+    // <SafeAreaView style={styles.container}>
+    <NavigationContainer>
+      <BottomTabs />
+    </NavigationContainer>
+    // </SafeAreaView>
+
+    // <View style={styles.container}>
+    //   {/* <ChatList /> */}
+    //   {/* <Navigation /> */}
+    //   {/* <ChatScreen /> */}
+    //   <StatusBar style="auto" />
+    // </View>
   );
 }
 
